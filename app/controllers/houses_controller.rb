@@ -7,6 +7,13 @@ class HousesController < ApplicationController
 
   def show
     @house = House.find(params[:id])
+
+    # new booking
+    @booking = Booking.new
+
+    # to be used in users controller to list all the bookings under user
+    # @bookings = @house.bookings
+
     # @reviews = @house.bookings.reviews?
   end
 
