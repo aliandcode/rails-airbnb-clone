@@ -11,7 +11,7 @@
     <%= f.input :lastname,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "lastnameZ" }%>
+                input_html: { autocomplete: "lastname" }%>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
@@ -23,6 +23,8 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
   </div>
 
   <div class="form-actions">
@@ -31,3 +33,6 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+
+
