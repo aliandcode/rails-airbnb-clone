@@ -4,10 +4,10 @@
     <% @house.each do |house| %>
       <div class="card">
           <%= link_to house.title, house_path(house), class: 'card-link' %>
+          <h3><%= house.title %></h3>
+          <h3><%= house.price %></h3>
       </div>
-        <h3><%= house.title %></h3>
-        <h3><%= house.price %></h3>
-  </div>
     <% end %>
+    <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoiZWNvbW1lcmNlcHJvIiwiYSI6ImNqdzI2NzAyZTAzbGkzeWszaGVwYzY2YWQifQ.a7CkfYTGEKFmcrI0nemmdA'>
   </div>
 </div>
