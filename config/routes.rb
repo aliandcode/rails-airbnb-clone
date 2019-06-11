@@ -6,4 +6,6 @@ Rails.application.routes.draw do
    resources :houses, only: [:index, :show, :new, :create]
 
   resources :houses
+
+  resources :users, only: %i[new create]
 end
