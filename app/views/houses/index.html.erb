@@ -1,0 +1,14 @@
+<!-- index.html.erb -->
+<div class="container">
+  <div class="cards">
+    <% @house.each do |house| %>
+      <div class="card">
+          <%= link_to house.title, house_path(house), class: 'card-link' %>
+      </div>
+        <h3><%= house.title %></h3>
+        <h3><%= house.price %></h3>
+  </div>
+    <% end %>
+  </div>
+</div>
+
