@@ -1,32 +1,30 @@
 <!-- show.html.erb -->
-<%= cl_image_tag @house.photo, height: 300, width: 400, crop: :fill %>
-<h2><%= @house.title %></h2>
-<p>Address: <%= @house.address %></p>
-<p>
-  <%= link_to 'Back to main page', houses_path, class: "btn btn-primary" %>
-</p>
-<br>
+<%= cl_image_tag @house.photo, height: 300, width: 1480, crop: :fill %>
+<div class="house-full-section">
+  <div class="house-details">
+    <div class="house-title">
+      <%= @house.title%>
+    </div>
+      <%= @house.address %>
+        <h2>Description</h2>
+      <%= @house.description %>
 
-<h3>Description</h3>
-<%= @house.description %>
+      <% @reviews.each do |review| %>
+        <p><%= "*" * review.stars %></p>
+        <p><%= review.comment %></p>
+      <% end %>
 
-<div class="booking_creation_form">
-<%= render 'shared/form_bookings' %>
+      <% unless current_user.bookings.where(house: @house).empty? %>
+        <%= simple_form_for ([@booking_to_review, @review]) do |f| %>
+        <%= f.input :stars, collection: 0..5 %>
+        <%= f.label :comment %>
+        <%= f.text_field :comment %>
+        <%= f.submit %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="booking_creation_form">
+      <%= render 'shared/form_bookings' %>
+  </div>
 </div>
-
-<h3>Reviews</h3>
-<% @reviews.each do |review| %>
-  <p><%= "*" * review.stars %></p>
-  <p><%= review.comment %></p>
-<% end %>
-
-<% unless current_user.bookings.where(house: @house).empty? %>
-  <%= simple_form_for ([@booking_to_review, @review]) do |f| %>
-
-    <%= f.input :stars, collection: 0..5 %>
-    <%= f.label :comment %>
-    <%= f.text_field :comment %>
-    <%= f.submit %>
-
-  <% end %>
-<% end %>
