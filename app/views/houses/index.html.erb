@@ -1,9 +1,9 @@
 <!-- index.html.erb -->
 <div class="container">
   <div class="all-cards">
-    <% @house.each do |house| %>
+    <% @houses.each do |house| %>
       <div class="house-card-wrapper">
-        <div class="house-card">
+        <div class="house-card" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/rio)">
         </div>
           <div class="house-card-info">
             <%= house.price %>
@@ -12,6 +12,9 @@
       </div>
     <% end %>
   </div>
-  <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoiZWNvbW1lcmNlcHJvIiwiYSI6ImNqdzI2NzAyZTAzbGkzeWszaGVwYzY2YWQifQ.a7CkfYTGEKFmcrI0nemmdA'>
+  <div
+    id="map" style="width: 45%; height: 100vh; "data-markers="<%= @markers.to_json %>"data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
 </div>
+
 
