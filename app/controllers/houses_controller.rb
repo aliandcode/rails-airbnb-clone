@@ -9,6 +9,7 @@ class HousesController < ApplicationController
     @house = House.find(params[:id])
     @review = Review.new
     @reviews = @house.bookings.map { |booking| booking.review }
+    @booking = Booking.new
   end
 
   def new
@@ -17,6 +18,7 @@ class HousesController < ApplicationController
 
   def create
     @house = House.new(house_params)
+    @house.user = current_user
     # still need to get the user id from somewhere..
 
     if @house.save
@@ -29,6 +31,6 @@ class HousesController < ApplicationController
   private
 
   def house_params
-    params.require(:house).permit(:title, :description, :address, :price, :bedrooms, :capacity, :photo, :category)
+    params.require(:house).permit(:title, :description, :address, :price, :bedrooms, :capacity, :photo_cache, :photo, :category)
   end
 end
