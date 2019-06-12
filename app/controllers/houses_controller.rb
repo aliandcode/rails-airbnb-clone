@@ -14,14 +14,10 @@ class HousesController < ApplicationController
 
   def show
     @house = House.find(params[:id])
-
-    # new booking
+    @review = Review.new
+    @reviews = @house.bookings.map { |booking| booking.review }
     @booking = Booking.new
-
-    # to be used in users controller to list all the bookings under user
-    # @bookings = @house.bookings
-
-    # @reviews = @house.bookings.reviews?
+    @booking_to_review = Booking.where(user: current_user, house: @house).last
   end
 
   def new
@@ -31,8 +27,6 @@ class HousesController < ApplicationController
   def create
     @house = House.new(house_params)
     @house.user = current_user
-    # still need to get the user id from somewhere..
-
     if @house.save
       redirect_to house_path(@house)
     else

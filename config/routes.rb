@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[show new create]
   end
 
-  resources :bookings, only: :index
+  resources :bookings, only: :index do
+    resources :reviews, only: :create
+  end
 
   resources :users, only: %i[new create]
 
