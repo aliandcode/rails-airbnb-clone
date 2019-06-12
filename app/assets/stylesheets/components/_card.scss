@@ -1,0 +1,34 @@
+.all-cards {
+  grid-gap: 7px;
+  padding: 5px;
+  flex-grow: 1;
+  margin-top: 130px;
+  grid-template-columns: 1fr 1fr;
+  display: grid;
+}
+
+.house-card {
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  font-size: 22px;
+  color: white;
+  font-weight: bolder;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+.house-card-info {
+  display: inline-flex;
+}
+
+a.card-link {
+  color: black;
+}
+
+
+
+
+// grid-template-columns: 1fr 1fr;
+//   display: grid;
