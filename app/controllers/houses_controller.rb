@@ -10,6 +10,7 @@ class HousesController < ApplicationController
     @review = Review.new
     @reviews = @house.bookings.map { |booking| booking.review }
     @booking = Booking.new
+    @booking_to_review = Booking.where(user: current_user, house: @house).last
   end
 
   def new
@@ -19,8 +20,6 @@ class HousesController < ApplicationController
   def create
     @house = House.new(house_params)
     @house.user = current_user
-    # still need to get the user id from somewhere..
-
     if @house.save
       redirect_to house_path(@house)
     else
