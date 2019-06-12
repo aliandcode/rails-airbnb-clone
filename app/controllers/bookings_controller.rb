@@ -25,8 +25,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to house_booking_path(@house, @booking)
     else
-      # where should I render to?
-      render house_booking_path(@house, @booking)
+      render :new
     end
   end
 

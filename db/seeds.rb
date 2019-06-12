@@ -35,6 +35,7 @@ end
   house = House.new(
     title: Faker::JapaneseMedia::DragonBall.character,
     user: User.all.sample,
+    description: Faker::Quote.matz,
     address: ADDRESSES.sample,
     bedrooms: 1,
     capacity: 1,

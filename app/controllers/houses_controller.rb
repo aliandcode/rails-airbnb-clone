@@ -16,6 +16,7 @@ class HousesController < ApplicationController
     @house = House.find(params[:id])
     @review = Review.new
     @reviews = @house.bookings.map { |booking| booking.review }
+
     @booking = Booking.new
     @booking_to_review = Booking.where(user: current_user, house: @house).last
   end
