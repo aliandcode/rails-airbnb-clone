@@ -7,10 +7,8 @@ class HousesController < ApplicationController
 
   def show
     @house = House.find(params[:id])
-    # @reviews = @house.bookings.reviews?
     @review = Review.new
-    raise
-    @reviews = @house.bookings.reviews
+    @reviews = @house.bookings.map { |booking| booking.review }
   end
 
   def new
