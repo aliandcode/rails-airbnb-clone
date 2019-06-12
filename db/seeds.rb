@@ -39,7 +39,8 @@ end
     address: ADDRESSES.sample,
     bedrooms: 1,
     capacity: 1,
-    category: "Entire_home"
+    category: "Entire_home",
+    price: 100
   )
   house.save!
 end

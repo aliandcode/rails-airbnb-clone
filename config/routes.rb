@@ -14,4 +14,10 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[new create]
 
+  # still need to disallow all the other pages routes
+  resources :pages do
+    collection do
+      get 'dashboard'
+    end
+  end
 end

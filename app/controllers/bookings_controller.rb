@@ -12,6 +12,7 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @house = House.find(params[:house_id])
   end
 
   def create
