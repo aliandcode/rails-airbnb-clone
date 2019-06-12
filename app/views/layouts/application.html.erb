@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <title>Airbnb</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -11,7 +11,7 @@
   </head>
   <body>
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-<%= link_to "houses", class: "navbar-brand" do %>
+<%= link_to houses_path, class: "navbar-brand" do %>
     <%= image_tag "logo.png" %>
 <% end %>
 
@@ -34,10 +34,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "Become a host", "#", class: "nav-link" %>
+        <%= link_to "Become a host", new_house_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Dashboard", "#", class: "nav-link" %>
+        <%= link_to "Sign up", new_user_session_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Log in",  user_session_path, class: "nav-link" %>
       </li>
       <li class="nav-item dropdown">
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
