@@ -23,9 +23,7 @@
         <%= f.select :capacity, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] %>
 
         <p>Category</p>
-        <%= f.select :category, %w[Entire_home Private_room Shared_room}] %>
-
-        <!-- require photo // cloudinary -->
+        <%= f.select :category, %w[Entire_home Private_room Shared_room] %>
 
         <%= f.button :submit, class: 'btn btn-primary' %>
       <% end %>
