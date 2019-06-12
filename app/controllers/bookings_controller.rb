@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[show]
+
   # to use index at some point to show the list of booking within users view?
   # def index
   #   @booking = booking.all
