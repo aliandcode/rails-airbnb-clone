@@ -17,7 +17,10 @@ end
 10.times do
   house = House.new(
     title: Faker::JapaneseMedia::DragonBall.character,
-    user: User.all.sample
+    user: User.all.sample,
+    bedrooms: 1,
+    capacity: 1,
+    category: "Entire_home"
   )
   house.save!
 end
