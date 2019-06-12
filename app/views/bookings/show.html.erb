@@ -1,0 +1,22 @@
+<h1>Your booking summary</h1>
+
+<p>Chek in date:
+  <%= @booking.checkin_date %>
+</p>
+<p>Check out date:
+  <%= @booking.checkout_date %>
+</p>
+<p>Guests:
+  <%= @booking.guests %>
+</p>
+<p>
+  Status: pending to be approved by host
+</p>
+<br>
+<p>
+  <%= link_to 'Back to main page', houses_path, class: "btn btn-primary" %>
+</p>
+<br>
+<p>
+  <a href="#" class="btn btn-secondary">Your dashboard</a>
+</p>

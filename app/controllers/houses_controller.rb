@@ -2,7 +2,14 @@ class HousesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @house = House.all
+    @houses = House.where.not(latitude: nil, longitude: nil)
+
+    @markers = @houses.map do |house|
+      {
+        lat: house.latitude,
+        lng: house.longitude
+      }
+    end
   end
 
   def show
