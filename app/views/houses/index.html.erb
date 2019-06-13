@@ -2,11 +2,12 @@
 <div class="container">
   <div class="all-cards">
     <% @houses.each do |house| %>
+
       <div class="house-card-wrapper">
-        <div class="house-card" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/rio)">
+        <div class="house-card" style="background-image: url(<%= house.photo %>)">
         </div>
           <div class="house-card-info">
-            <%= house.price %>
+            <p><%= house.price %>$</p>
             <%= link_to house.title, house_path(house), class: 'card-link' %>
           </div>
       </div>
