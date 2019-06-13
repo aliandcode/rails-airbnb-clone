@@ -42,7 +42,6 @@ User.destroy_all
   user.save!
 end
 
-<<<<<<< HEAD
 array_house = [
   { title: "Light & Spacious Garden Flat London",
     user: User.all.sample,
@@ -52,7 +51,7 @@ array_house = [
     priceCurrency: "€",
     bedrooms: rand(1..5),
     capacity: rand(1..5),
-    category: "Entire_home",
+    category: "Entire home",
   },
   {
 
@@ -65,7 +64,7 @@ array_house = [
     priceCurrency: "€",
     bedrooms: rand(1..5),
     capacity: rand(1..5),
-    category: "Entire_home",
+    category: "Entire home",
   },
   {
 
@@ -79,7 +78,7 @@ It i surrouded by a broad selection of trendy restaurants.",
     priceCurrency: "€",
     bedrooms: rand(1..5),
     capacity: rand(1..5),
-    category: "Entire_home",
+    category: "Entire home",
   },
   {
 
@@ -92,7 +91,7 @@ It i surrouded by a broad selection of trendy restaurants.",
     priceCurrency: "€",
     bedrooms: rand(1..5),
     capacity: rand(1..5),
-    category: "Entire_home",
+    category: "Entire home",
   },
   {
 
@@ -105,7 +104,7 @@ It i surrouded by a broad selection of trendy restaurants.",
     priceCurrency: "€",
     bedrooms: rand(1..5),
     capacity: rand(1..5),
-    category: "Entire_home",
+    category: "Entire home",
   },
   {
 
@@ -118,7 +117,7 @@ It i surrouded by a broad selection of trendy restaurants.",
     priceCurrency: "€",
     bedrooms: rand(1..5),
     capacity: rand(1..5),
-    category: "Entire_home",
+    category: "Entire home",
   },
   {
 
@@ -131,7 +130,7 @@ It i surrouded by a broad selection of trendy restaurants.",
     priceCurrency: "€",
     bedrooms: rand(1..5),
     capacity: rand(1..5),
-    category: "Entire_home",
+    category: "Entire home",
   },
   {
 
@@ -144,7 +143,7 @@ It i surrouded by a broad selection of trendy restaurants.",
     priceCurrency: "€",
     bedrooms: rand(1..5),
     capacity: rand(1..5),
-    category: "Entire_home",
+    category: "Entire home",
   },
     {
 
@@ -157,7 +156,7 @@ It i surrouded by a broad selection of trendy restaurants.",
     priceCurrency: "€",
     bedrooms: rand(1..5),
     capacity: rand(1..5),
-    category: "Entire_home",
+    category: "Entire home",
   },
   {
 
@@ -170,7 +169,7 @@ It i surrouded by a broad selection of trendy restaurants.",
     priceCurrency: "€",
     bedrooms: rand(1..5),
     capacity: rand(1..5),
-    category: "Entire_home",
+    category: "Entire home",
   }
 ]
 
@@ -187,23 +186,6 @@ array_house.each do |house|
             capacity: rand(1..5),
             category: house[:category])
   h.save!
-
-
-
-=======
-25.times do
-  house = House.new(
-    title: Faker::JapaneseMedia::DragonBall.character,
-    user: User.all.sample,
-    description: Faker::Quote.matz,
-    address: ADDRESSES.sample,
-    bedrooms: 1,
-    capacity: 1,
-    category: "Entire home",
-    price: 100
-  )
-  house.save!
->>>>>>> master
 end
 
 s = %w[pending approved rejected]
