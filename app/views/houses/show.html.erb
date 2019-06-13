@@ -14,17 +14,21 @@
         <p><%= review.comment %></p>
       <% end %>
 
-      <% unless current_user.bookings.where(house: @house).empty? %>
-        <%= simple_form_for ([@booking_to_review, @review]) do |f| %>
-        <%= f.input :stars, collection: 0..5 %>
-        <%= f.label :comment %>
-        <%= f.text_field :comment %>
-        <%= f.submit %>
+      <% if user_signed_in? %>
+        <% unless current_user.bookings.where(house: @house).empty? %>
+          <%= simple_form_for ([@booking_to_review, @review]) do |f| %>
+          <%= f.input :stars, collection: 0..5 %>
+          <%= f.label :comment %>
+          <%= f.text_field :comment %>
+          <%= f.submit %>
+          <% end %>
+        <% end %>
       <% end %>
-    <% end %>
   </div>
 
-  <div class="booking_creation_form">
-      <%= render 'shared/form_bookings' %>
-  </div>
+  <% if current_user != @house.user %>
+    <div class="booking_creation_form">
+        <%= render 'shared/form_bookings' %>
+    </div>
+  <% end %>
 </div>
