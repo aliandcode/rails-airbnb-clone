@@ -2,7 +2,15 @@
 <div class="container">
   <div class="all-cards">
     <% @houses.each do |house| %>
+
       <div class="house-card-wrapper">
+<<<<<<< HEAD
+        <div class="house-card" style="background-image: url(<%= house.photo %>)">
+        </div>
+          <div class="house-card-info">
+            <p><%= house.price %>$</p>
+            <%= link_to house.title, house_path(house), class: 'card-link' %>
+=======
           <div class="house-card">
           <%= link_to house_path(house) do %>
           <%= cl_image_tag house.photo %>
@@ -14,6 +22,7 @@
               <p>Entire Home | 2 Beds</p>
             </div>
            <h2><%= house.price %></h2>
+>>>>>>> master
           </div>
       </div>
     <% end %>
