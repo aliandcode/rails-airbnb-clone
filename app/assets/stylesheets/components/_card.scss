@@ -7,28 +7,34 @@
   display: grid;
 }
 
-.house-card {
-  background-size: cover;
-  background-position: center;
-  height: 250px;
-  border-radius: 1px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  font-size: 22px;
-  color: white;
-  font-weight: bolder;
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
-}
-
-.house-card-info {
-  display: inline-flex;
+.house-card-infos {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
 }
 
 a.card-link {
   color: black;
 }
 
+.house-card img {
+  height: 380px;
+  width: 450px;
+}
 
+.house-card-title h2 {
+  font-size: 15px;
+  font-weight: light;
+}
 
+.house-card-title p {
+  font-size: 14px;
+  font-weight: light;
+}
 
-// grid-template-columns: 1fr 1fr;
-//   display: grid;
+.house-card-infos h2 {
+  font-size: 20px;
+}
