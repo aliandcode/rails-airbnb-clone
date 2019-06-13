@@ -22,6 +22,7 @@ class BookingsController < ApplicationController
     @booking.house = @house
     # does this user assignation work?
     @booking.user = current_user
+    @booking.status = "pending"
 
     if @booking.save
       redirect_to house_booking_path(@house, @booking)

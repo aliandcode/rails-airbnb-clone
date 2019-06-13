@@ -42,6 +42,7 @@ User.destroy_all
   user.save!
 end
 
+<<<<<<< HEAD
 array_house = [
   { title: "Light & Spacious Garden Flat London",
     user: User.all.sample,
@@ -189,7 +190,23 @@ array_house.each do |house|
 
 
 
+=======
+25.times do
+  house = House.new(
+    title: Faker::JapaneseMedia::DragonBall.character,
+    user: User.all.sample,
+    description: Faker::Quote.matz,
+    address: ADDRESSES.sample,
+    bedrooms: 1,
+    capacity: 1,
+    category: "Entire home",
+    price: 100
+  )
+  house.save!
+>>>>>>> master
 end
+
+s = %w[pending approved rejected]
 
 45.times do
   booking = Booking.new(
@@ -197,7 +214,8 @@ end
     checkin_date: DateTime.parse("09/01/2009 17:00"),
     checkout_date: DateTime.parse("15/01/2009 17:00"),
     user: User.all.sample,
-    house: House.all.sample
+    house: House.all.sample,
+    status: s[rand(0..2)]
   )
   booking.save!
   review = Review.new(
