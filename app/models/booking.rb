@@ -6,4 +6,5 @@ class Booking < ApplicationRecord
   validates :guests, numericality: true, presence: true
   validates :checkin_date, presence: true
   validates :checkout_date, presence: true
+  validates :status, inclusion: { in: %w[pending approved rejected] }, presence: true
 end
