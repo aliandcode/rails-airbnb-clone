@@ -1,18 +1,13 @@
+<h4>Book the place</h4>
 <%= simple_form_for [@house, @booking], url: house_bookings_path(@house), method: :post  do |f| %>
   <br>
-  <p>Check In</p>
-  <%= f.label :checkin_date %>
-  <%= f.text_field :checkin_date %>
-
-  <p>Check Out</p>
-  <%= f.label :checkout_date %>
-  <%= f.text_field :checkout_date %>
-
-  <p>Guests</p>
-  <%= f.label :checkout_date %>
-  <%= f.text_field :checkout_date %>
-
-  <%= f.association :house, prompt: "Choose an house" %>
+  <%= f.input :checkin_date, as: :string, required: false, input_html: {id: "range_start" } %>
+  <br>
+  <%= f.input :checkout_date, as: :string, required: false, input_html: {id: "range_end"} %>
+  <br>
+  <%= f.label "Guests" %>
+  <%= f.text_field :guests %>
+  <br>
   <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
     <i class="icon-ok icon-white"></i> Add
   <% end %>

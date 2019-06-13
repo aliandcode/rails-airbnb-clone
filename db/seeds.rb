@@ -5,6 +5,23 @@ Booking.destroy_all
 House.destroy_all
 User.destroy_all
 
+ADDRESSES = [
+  'Corso Magenta, 52, 20123 Milano MI',
+  'Tour Eiffel 10',
+  'Tour Eiffel 10',
+  'Tour Eiffel 10',
+  'Tour Eiffel 10',
+  'Tour Eiffel 10',
+  'Tour Eiffel 10',
+  'Tour Eiffel 10',
+  'Tour Eiffel 10',
+  'Tour Eiffel 10',
+  'Tour Eiffel 10',
+  'Tour Eiffel 10',
+  'Tour Eiffel 10',
+  'Tour Eiffel 10',
+]
+
 10.times do
   user = User.new(
     email: Faker::Internet.email,
@@ -18,9 +35,12 @@ end
   house = House.new(
     title: Faker::JapaneseMedia::DragonBall.character,
     user: User.all.sample,
+    description: Faker::Quote.matz,
+    address: ADDRESSES.sample,
     bedrooms: 1,
     capacity: 1,
-    category: "Entire_home"
+    category: "Entire_home",
+    price: 100
   )
   house.save!
 end

@@ -8,8 +8,16 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[show new create]
   end
 
-  resources :bookings, only: :index
+  resources :bookings, only: :index do
+    resources :reviews, only: :create
+  end
 
   resources :users, only: %i[new create]
 
+  # still need to disallow all the other pages routes
+  resources :pages do
+    collection do
+      get 'dashboard'
+    end
+  end
 end

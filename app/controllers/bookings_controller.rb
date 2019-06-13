@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[show]
+
   # to use index at some point to show the list of booking within users view?
   # def index
   #   @booking = booking.all
@@ -10,6 +12,7 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @house = House.find(params[:house_id])
   end
 
   def create
@@ -23,8 +26,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to house_booking_path(@house, @booking)
     else
-      # where should I render to?
-      render house_booking_path(@house, @booking)
+      render :new
     end
   end
 

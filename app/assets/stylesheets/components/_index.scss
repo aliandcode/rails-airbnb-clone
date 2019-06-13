@@ -35,4 +35,20 @@
   padding: 50px;
 }
 
+#map {
+  overflow: hidden;
+}
 
+.house-title {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.house-details {
+  margin: 50px;
+}
+
+.house-full-section {
+  display: flex;
+  background: white;
+}
