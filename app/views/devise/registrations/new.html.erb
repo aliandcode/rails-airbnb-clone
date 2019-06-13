@@ -4,10 +4,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :firstname,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "firstname" }%>
+    <%= f.input :firstname, required: true, autofocus: true, input_html: { autocomplete: "firstname" }%>
     <%= f.input :lastname,
                 required: true,
                 autofocus: true,
@@ -36,21 +33,37 @@
 
 
 <div class="text-center">
-  <div class="logo">login</div>
-  <!-- Main Form -->
+  <div class="logo">signup</div>
+
   <div class="login-form-1">
-    <form id="login-form" class="text-left">
+    <!-- <form id="login-form" class="text-left"> -->
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
       <div class="login-form-main-message"></div>
       <div class="main-login-form">
         <div class="login-group">
           <div class="form-group">
-            <label for="lg_username" class="sr-only">Username</label>
-            <input type="text" class="form-control" id="lg_username" name="lg_username" placeholder="username">
+            <label for="lg_username" class="sr-only">first name</label>
+            <%= f.input :firstname, required: true, autofocus: true, input_html: { autocomplete: "firstname" }, class:"form-control", id:"lg_username", placeholder:"first name"%>
           </div>
           <div class="form-group">
-            <label for="lg_password" class="sr-only">Password</label>
-            <input type="password" class="form-control" id="lg_password" name="lg_password" placeholder="password">
+            <label for="lg_username" class="sr-only">last name</label>
+            <%= f.input :lastname, required: true, autofocus: true, input_html: { autocomplete: "firstname" }, class:"form-control", id:"lg_username", placeholder:"last name"%>
           </div>
+          <div class="form-group">
+            <label for="lg_username" class="sr-only">email</label>
+            <%= f.input :email, required: true, autofocus: true, input_html: { autocomplete: "firstname" }, class:"form-control", id:"lg_username", placeholder:"email"%>
+          </div>
+          <div class="form-group">
+            <label for="lg_username" class="sr-only">password</label>
+            <%= f.input :password, required: true, autofocus: true, input_html: { autocomplete: "firstname" }, class:"form-control", id:"lg_username", placeholder:"password"%>
+          </div>
+          <div class="form-group">
+            <label for="lg_username" class="sr-only">password</label>
+            <%= f.input :password_confirmation, required: true, autofocus: true, input_html: { autocomplete: "firstname" }, class:"form-control", id:"lg_username", placeholder:"*password"%>
+          </div>
+          <%= f.input :photo, class:"form-control", id:"lg_username", placeholder:"photo" %>
+          <%= f.input :photo_cache, as: :hidden, class: "hidden" %>
           <div class="form-group login-group-checkbox">
             <input type="checkbox" id="lg_remember" name="lg_remember">
             <label for="lg_remember">remember</label>
@@ -62,5 +75,7 @@
         <p>forgot your password? <a href="#">click here</a></p>
         <p>new user? <a href="#">create new account</a></p>
       </div>
-    </form>
+    <% end %>
+    <!-- </form> -->
   </div>
+
