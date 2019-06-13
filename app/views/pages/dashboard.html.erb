@@ -1,1 +1,30 @@
 <h1>Dashboard</h1>
+
+<div class="dashboard container">
+  <div class="listings">
+    <h3>My listings</h3>
+    <div class="listings-card">
+      <% @houses.each do |house| %>
+        <%= image_tag "#{house.photo}", class: "dashboard_picture" %>
+        <div class="listings-body">
+          <h3><%= link_to house.title, house_path(house), class: 'card-link' %>
+          </h3>
+          <p>At <%= house.address %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="bookings">
+    <h3>My bookings</h3>
+    <div class="dashboard-bookings">
+      <% @bookings.each do |booking| %>
+        <div class="dashboard-bookings-body">
+          <p>From <%= booking.checkin_date %> to <%= booking.checkout_date %> </p>
+          <p>Booking status: <%= booking.status %></p>
+          <p>Guests: <%= booking.guests %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
