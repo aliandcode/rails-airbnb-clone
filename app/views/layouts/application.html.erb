@@ -10,53 +10,7 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %>
   </head>
   <body>
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-
-<%= link_to houses_path, class: "navbar-brand" do %>
-
-    <%= image_tag "logo.png" %>
-<% end %>
-
-<div class="search_bar">
-  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-  <div class="search-form-control form-group">
-  <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Anywhere" />
-    <button name="button" type="submit" class="btn btn-flat">
-    </button>
-  </div>
-</div>
-<% end %>
-
-
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to "Become a host", new_house_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Dashboard", dashboard_pages_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Sign up", new_user_session_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Log in",  user_session_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item dropdown">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Dashboard", dashboard_pages_path, class: "dropdown-item" %>
-          <%= link_to "Another action", "#", class: "dropdown-item" %>
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
+<%= render 'shared/navbar' %>
 <div class="wrapper">
   <%= yield %>
 </div>
