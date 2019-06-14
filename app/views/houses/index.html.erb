@@ -14,7 +14,7 @@
               <h2><%= link_to house.title, house_path(house), class: 'card-link' %></h2>
               <p><%= house.category %> | <%= house.bedrooms %> Bedrooms</p>
             </div>
-            <h2><%= house.price %></h2>
+            <h2>$<%= house.price %>/night</h2>
           </div>
       </div>
     <% end %>
