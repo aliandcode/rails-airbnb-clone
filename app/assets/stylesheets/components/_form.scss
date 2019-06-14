@@ -1,3 +1,7 @@
+.booking-summary {
+  text-align: center;
+  margin: auto;
+}
 html,
 body {
   background: #efefef;
@@ -273,4 +277,7 @@ abbr[title="required"] {
 }
 .redcol {
   color: $red;
+}
+.centertext {
+  text-align:center;
 }

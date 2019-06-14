@@ -172,7 +172,6 @@ array_house.each do |house|
             capacity: rand(1..5),
             category: house[:category])
   h.save!
-
 end
 
 s = %w[pending approved rejected]
