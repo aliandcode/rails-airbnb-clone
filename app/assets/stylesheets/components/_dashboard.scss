@@ -17,6 +17,7 @@
   padding-right: 10px;
   padding-top: 5px;
   width: 550px;
+  margin: 0 auto;
 }
 
 .dashboard-picture {
@@ -47,6 +48,13 @@
     cursor: pointer;
 }
 
-.booking-confirmation {
-  border-bottom: 1px solid grey;
+.spacingt {
+  margin-top: 30px;
+}
+
+
+
+
+ .nav-link.active {
+  background-color: $red !important;
 }
