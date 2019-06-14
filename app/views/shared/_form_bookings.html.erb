@@ -1,4 +1,3 @@
-<h4>Book the place</h4>
 <%= simple_form_for [@house, @booking], url: house_bookings_path(@house), method: :post  do |f| %>
   <br>
   <%= f.input :checkin_date, as: :string, required: false, input_html: {id: "range_start" } %>
@@ -7,8 +6,7 @@
   <br>
   <%= f.label "Guests" %>
   <%= f.text_field :guests %>
-  <br>
   <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
-    <i class="icon-ok icon-white"></i> Add
+    <i class="icon-ok icon-white"></i> Book
   <% end %>
 <% end %>

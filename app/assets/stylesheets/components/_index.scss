@@ -41,11 +41,43 @@
   font-weight: bold;
 }
 
-.house-details {
+.house-full-section {
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
   margin: 50px;
 }
 
-.house-full-section {
-  display: flex;
-  background: white;
+.house-details {
+  padding-left: 70px;
+  padding-right: 100px;
+}
+
+img {
+  width: 100%;
+}
+
+.btn-primary {
+  background: #ee5760;
+  height: 35px;
+  width: 180px;
+  border-style: hidden;
+  border-radius: 10px;
+}
+
+.btn-primary:hover {
+  background: red;
+}
+
+#review_comment {
+  overflow: auto;
+  resize: vertical;
+  height: 90px;
+  width: 500px;
+}
+
+.submit-review {
+  background-color: #EE5760;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
 }

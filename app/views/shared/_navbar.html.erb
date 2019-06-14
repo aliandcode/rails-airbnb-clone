@@ -18,6 +18,15 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item padding-lat">
+          <% if params[:controller] + params[:action] == 'housesshow' %>
+          <% if current_user != @house.user %>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bookingModal">
+          Make a Booking!
+          </button>
+         <% end %>
+         <% end %>
+        </li>
+        <li class="nav-item padding-lat">
           <%= link_to "Become a host", new_house_path, class: "nav-link" %>
         </li>
         <li class="nav-item padding-lat">
