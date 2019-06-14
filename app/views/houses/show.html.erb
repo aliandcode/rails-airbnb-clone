@@ -1,20 +1,28 @@
 <!-- show.html.erb -->
-<%= cl_image_tag @house.photo, height: 300, crop: :fill %>
+<div class="house-banner" style="background-image: url(<%= @house.photo %>);">
+</div>
 <div class="house-full-section">
   <div class="house-details">
     <div class="house-title">
       <%= @house.title%>
     </div>
-    <br>
-      <%= @house.address %>
+        <%= @house.address %>
+        <hr>
+       <div class="description">
         <h2>Description</h2>
       <%= @house.description %>
+      </div>
+        <hr>
 
       <% @reviews.each do |review| %>
+      <% if review.booking.user.photo.url %>
+        <%= image_tag review.booking.user.photo.url, class: 'avatar' %>
+      <% end %>
         <% review.stars.times do %>
         <%= image_tag 'star.png', style:"width:20px;height:20px;" %>
         <% end %>
         <p><%= review.comment %></p>
+        <hr>
       <% end %>
       <% if user_signed_in? %>
         <% unless current_user.bookings.where(house: @house).empty? %>
