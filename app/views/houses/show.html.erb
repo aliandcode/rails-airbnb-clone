@@ -1,34 +1,33 @@
 <!-- show.html.erb -->
-<%= cl_image_tag @house.photo, height: 300, width: 1480, crop: :fill %>
+<%= cl_image_tag @house.photo, height: 300, crop: :fill %>
 <div class="house-full-section">
   <div class="house-details">
     <div class="house-title">
       <%= @house.title%>
     </div>
+    <br>
       <%= @house.address %>
         <h2>Description</h2>
       <%= @house.description %>
 
       <% @reviews.each do |review| %>
-        <p><%= "*" * review.stars %></p>
+        <% review.stars.times do %>
+        <%= image_tag 'star.png', style:"width:20px;height:20px;" %>
+        <% end %>
         <p><%= review.comment %></p>
       <% end %>
-
       <% if user_signed_in? %>
         <% unless current_user.bookings.where(house: @house).empty? %>
           <%= simple_form_for ([@booking_to_review, @review]) do |f| %>
-          <%= f.input :stars, collection: 0..5 %>
+          <%= f.input :stars, collection: 1..5 %>
           <%= f.label :comment %>
-          <%= f.text_field :comment %>
+          <br>
+          <%= f.text_area :comment %>
+          <br>
           <%= f.submit %>
           <% end %>
         <% end %>
       <% end %>
   </div>
-
-  <% if current_user != @house.user %>
-    <div class="booking_creation_form">
-        <%= render 'shared/form_bookings' %>
-    </div>
-  <% end %>
 </div>
+<%= render 'bookings/modal' %>

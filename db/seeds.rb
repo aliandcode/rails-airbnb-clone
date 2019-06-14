@@ -3,20 +3,6 @@ require "open-uri"
 require "nokogiri"
 
 
-
-# def faker_address
-#  array = []
-#  countries_array = ["Italy","Netherlands","Japan","France","Spain","Denmark","Germany"]
-#  country = countries_array.sample
-#  html_doc = Nokogiri::HTML(open("https://www.fakeaddressgenerator.com/World/#{country}_address_generator"))
-#  html_doc.css("input.no-style").each do |element|
-#     array << element.attributes["value"].value
-#  end
-#  sleep 5
-#  puts "creating fake address in #{country}.."
-#  return "#{array[0]} #{array[3]}".tr("0-9", "").strip
-# end
-
 def faker_address
  array = []
  html_doc = Nokogiri::HTML(open("https://www.fakeaddressgenerator.com/"))
