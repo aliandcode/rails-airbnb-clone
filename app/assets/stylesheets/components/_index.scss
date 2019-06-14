@@ -68,3 +68,16 @@ img {
   background: red;
 }
 
+#review_comment {
+  overflow: auto;
+  resize: vertical;
+  height: 90px;
+  width: 500px;
+}
+
+.submit-review {
+  background-color: #EE5760;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
