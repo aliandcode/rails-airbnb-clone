@@ -1,20 +1,32 @@
-<h2>Log in</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+
+<div class="text-center">
+  <div class="logo">login</div>
+  <div class="login-form-1">
+    <!-- <form id="login-form" class="text-left"> -->
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="login-form-main-message"></div>
+      <div class="main-login-form">
+        <div class="login-group">
+          <div class="form-group space-top">
+            <label for="lg_username" class="sr-only">first name</label>
+            <%= f.input :email, required: true, autofocus: true, input_html: { autocomplete: "email" }, class:"form-control", id:"lg_username", placeholder:"email", label:false%>
+          </div>
+          <div class="form-group">
+            <label for="lg_username" class="sr-only">password</label>
+            <%= f.input :password, required: true, autofocus: true, input_html: { autocomplete: "firstname" }, class:"form-control", id:"lg_username", placeholder:"password", label:false%>
+          </div>
+          <div class="form-group login-group-checkbox">
+            <input type="checkbox" id="lg_remember" name="lg_remember">
+            <label for="lg_remember">remember</label>
+          </div>
+        </div>
+        <button type="submit" class="login-button"><i class="fa fa-chevron-right redcol"></i></button>
+      </div>
+      <div class="etc-login-form">
+        <p>forgot your password? <a href="#">click here</a></p>
+        <p>new user? <a href="#">create new account</a></p>
+      </div>
+    <% end %>
+    <!-- </form> -->
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
