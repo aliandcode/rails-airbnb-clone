@@ -1,27 +1,100 @@
+<!-- BODY -->
+<table class="body-wrap">
+  <tr>
+    <td></td>
+    <td class="booking-s-container" bgcolor="#FFFFFF">
 
-<div class="booking-summary">
-<h1>Your booking summary</h1>
+      <div class="content">
+      <table>
+        <tr>
+          <td>
+            <br/>
+            <h3>Thanks <%= @booking.user.firstname.capitalize %>!</h3>
 
-<p>From <%= @booking.checkin_date %> to <%= @booking.checkout_date %>
-</p>
-<p>Nigths:
-  <%= (@booking.checkout_date - @booking.checkin_date).to_i %>
-</p>
-<p>Price:
-  $<%= (@booking.checkout_date - @booking.checkin_date).to_i * @house.price %>
-</p>
-<p>Guests:
-  <%= @booking.guests %>
-</p>
-<p>
-  Status: pending to be approved by host
-</p>
-<br>
-<p>
-  <%= link_to 'Back to main page', houses_path, class: "myButton" %>
-</p>
-<br>
-<p>
-  <%= link_to 'Your dashboard', dashboard_pages_path, class: "myButton2" %>
-</p>
-</div>
+            <!-- You may like to include a Hero Image -->
+            <p><%= image_tag "#{@booking.house.photo}", class: "booking-summary-picture" %></p>
+            <!-- /Hero Image -->
+
+            <br/>
+
+            <h4>Your booking summary</h4>
+            <p class="book-sum">Thank you for booking <b><%= @booking.house.title %></b>. Your booking has been placed successfully, and is pending for host approval.</p>
+
+            <br/>
+
+            <!-- Line Items -->
+            <div class="products">
+
+            </div>
+            <hr>
+
+            <!-- /Line Items -->
+
+            <p>From <%= @booking.checkin_date %> to <%= @booking.checkout_date %>
+            </p>
+            <p>Nigths:
+              <%= (@booking.checkout_date - @booking.checkin_date).to_i %>
+            </p>
+            <p>Price:
+
+            </p>
+            <p>Guests:
+              <%= @booking.guests %>
+            </p>
+            <p>
+              Status: pending to be approved by host
+            </p>
+
+            <!-- Totals -->
+
+            <br/>
+            <br/>
+
+            <h4><b>Total: $<%= (@booking.checkout_date - @booking.checkin_date).to_i * @house.price %></b></h4>
+            <!-- /Totals -->
+
+            <br/>
+
+            <!-- address detals -->
+
+            <br/>
+
+            <p style="text-align:center;">
+              <%= link_to 'View you bookings', dashboard_pages_path, class: "booking-btn" %>
+            </p>
+
+            <br/>
+          </td>
+        </tr>
+      </table>
+      </div>
+
+    </td>
+    <td></td>
+  </tr>
+</table>
+<!-- /BODY -->
+
+<!-- FOOTER -->
+<table class="footer-wrap" bgcolor="#EFEFEF">
+  <tr>
+    <td></td>
+    <td class="booking-s-container">
+
+        <!-- content -->
+        <div class="content">
+        <table>
+        <tr>
+          <td align="center">
+            <p>Thank you for bookign at <%= link_to 'AliBnb', houses_path %>
+            <p><small>© AliBnb</small></p>
+          </td>
+        </tr>
+      </table>
+        </div><!-- /content -->
+
+    </td>
+    <td></td>
+  </tr>
+</table><!-- /FOOTER -->
+
