@@ -3,7 +3,6 @@ require "open-uri"
 require "nokogiri"
 
 
-
 def faker_address
  array = []
  html_doc = Nokogiri::HTML(open("https://www.fakeaddressgenerator.com/"))
@@ -38,7 +37,7 @@ array_house = [
     priceCurrency: "€",
     bedrooms: rand(1..5),
     capacity: rand(1..5),
-    category: "Entire_home",
+    category: "Entire home",
   },
   {
 
@@ -51,7 +50,7 @@ array_house = [
     priceCurrency: "€",
     bedrooms: rand(1..5),
     capacity: rand(1..5),
-    category: "Entire_home",
+    category: "Entire home",
   },
   {
 
@@ -65,7 +64,7 @@ It i surrouded by a broad selection of trendy restaurants.",
     priceCurrency: "€",
     bedrooms: rand(1..5),
     capacity: rand(1..5),
-    category: "Entire_home",
+    category: "Entire home",
   },
   {
 
@@ -78,7 +77,7 @@ It i surrouded by a broad selection of trendy restaurants.",
     priceCurrency: "€",
     bedrooms: rand(1..5),
     capacity: rand(1..5),
-    category: "Entire_home",
+    category: "Entire home",
   },
   {
 
@@ -91,7 +90,7 @@ It i surrouded by a broad selection of trendy restaurants.",
     priceCurrency: "€",
     bedrooms: rand(1..5),
     capacity: rand(1..5),
-    category: "Entire_home",
+    category: "Entire home",
   },
   {
 
@@ -104,7 +103,7 @@ It i surrouded by a broad selection of trendy restaurants.",
     priceCurrency: "€",
     bedrooms: rand(1..5),
     capacity: rand(1..5),
-    category: "Entire_home",
+    category: "Entire home",
   },
   {
 
@@ -117,7 +116,7 @@ It i surrouded by a broad selection of trendy restaurants.",
     priceCurrency: "€",
     bedrooms: rand(1..5),
     capacity: rand(1..5),
-    category: "Entire_home",
+    category: "Entire home",
   },
   {
 
@@ -130,7 +129,7 @@ It i surrouded by a broad selection of trendy restaurants.",
     priceCurrency: "€",
     bedrooms: rand(1..5),
     capacity: rand(1..5),
-    category: "Entire_home",
+    category: "Entire home",
   },
     {
 
@@ -143,7 +142,7 @@ It i surrouded by a broad selection of trendy restaurants.",
     priceCurrency: "€",
     bedrooms: rand(1..5),
     capacity: rand(1..5),
-    category: "Entire_home",
+    category: "Entire home",
   },
   {
 
@@ -156,7 +155,7 @@ It i surrouded by a broad selection of trendy restaurants.",
     priceCurrency: "€",
     bedrooms: rand(1..5),
     capacity: rand(1..5),
-    category: "Entire_home",
+    category: "Entire home",
   }
 ]
 
