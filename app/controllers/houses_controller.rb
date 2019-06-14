@@ -3,9 +3,9 @@ class HousesController < ApplicationController
 
   def index
     if params[:query].present?
-      @houses = House.search_by_address(params[:query])
+      @houses = House.search_by_address(params[:query]).order(created_at: :desc)
     else
-      @houses = House.where.not(latitude: nil, longitude: nil)
+      @houses = House.where.not(latitude: nil, longitude: nil).order(created_at: :desc)
     end
 
     @markers = @houses.map do |house|

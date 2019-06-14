@@ -1,16 +1,14 @@
+
+<div class="booking-summary">
 <h1>Your booking summary</h1>
 
-<p>Chek in date:
-  <%= @booking.checkin_date %>
-</p>
-<p>Check out date:
-  <%= @booking.checkout_date %>
+<p>From <%= @booking.checkin_date %> to <%= @booking.checkout_date %>
 </p>
 <p>Nigths:
   <%= (@booking.checkout_date - @booking.checkin_date).to_i %>
 </p>
 <p>Price:
-  <%= (@booking.checkout_date - @booking.checkin_date).to_i * @house.price %>
+  $<%= (@booking.checkout_date - @booking.checkin_date).to_i * @house.price %>
 </p>
 <p>Guests:
   <%= @booking.guests %>
@@ -20,9 +18,10 @@
 </p>
 <br>
 <p>
-  <%= link_to 'Back to main page', houses_path, class: "btn btn-primary" %>
+  <%= link_to 'Back to main page', houses_path, class: "myButton" %>
 </p>
 <br>
 <p>
-  <%= link_to 'Your dashboard', dashboard_pages_path, class: "btn btn-secondary" %>
+  <%= link_to 'Your dashboard', dashboard_pages_path, class: "myButton2" %>
 </p>
+</div>
