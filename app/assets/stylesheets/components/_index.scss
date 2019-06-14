@@ -5,7 +5,7 @@
 @import "card";
 @import "map";
 @import "form";
-
+@import "banner";
 
 .container {
   display: flex;
@@ -82,3 +82,15 @@ img {
   padding: 10px;
   border-radius: 10px;
 }
+
+.description {
+  padding-top: 20px;
+}
+
+hr {
+width: 100%;
+margin-left: auto;
+margin-right: auto;
+}
+
+

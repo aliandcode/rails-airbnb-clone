@@ -5,7 +5,7 @@ require "nokogiri"
 
 def faker_address
  array = []
- html_doc = Nokogiri::HTML(open("https://www.fakeaddressgenerator.com/"))
+ html_doc = Nokogiri::HTML(open("https://www.fakeaddressgenerator.com/Index/index"))
  html_doc.css("input.no-style").each do |element|
     array << element.attributes["value"].value
  end
@@ -19,11 +19,11 @@ House.destroy_all
 User.destroy_all
 
 
-
 10.times do
   user = User.new(
     email: Faker::Internet.email,
-    password: "123456"
+    password: "123456",
+    remote_photo_url: "https://robohash.org/#{rand(200).to_s}"
   )
   user.save!
 end
