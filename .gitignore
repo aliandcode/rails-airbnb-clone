@@ -1,4 +1,4 @@
-.bundle
+$.bundle
 log/*.log
 tmp/**/*
 tmp/*
@@ -13,10 +13,5 @@ node_modules
 yarn-error.log
 .byebug_history
 .env*
-.env*
-<<<<<<< HEAD
-=======
-.env*
->>>>>>> master
-.env*
-.env*
+
+

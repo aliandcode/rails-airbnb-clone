@@ -4,19 +4,6 @@ require "nokogiri"
 
 
 
-# def faker_address
-#  array = []
-#  countries_array = ["Italy","Netherlands","Japan","France","Spain","Denmark","Germany"]
-#  country = countries_array.sample
-#  html_doc = Nokogiri::HTML(open("https://www.fakeaddressgenerator.com/World/#{country}_address_generator"))
-#  html_doc.css("input.no-style").each do |element|
-#     array << element.attributes["value"].value
-#  end
-#  sleep 5
-#  puts "creating fake address in #{country}.."
-#  return "#{array[0]} #{array[3]}".tr("0-9", "").strip
-# end
-
 def faker_address
  array = []
  html_doc = Nokogiri::HTML(open("https://www.fakeaddressgenerator.com/"))
@@ -42,7 +29,6 @@ User.destroy_all
   user.save!
 end
 
-<<<<<<< HEAD
 array_house = [
   { title: "Light & Spacious Garden Flat London",
     user: User.all.sample,
@@ -188,22 +174,6 @@ array_house.each do |house|
             category: house[:category])
   h.save!
 
-
-
-=======
-25.times do
-  house = House.new(
-    title: Faker::JapaneseMedia::DragonBall.character,
-    user: User.all.sample,
-    description: Faker::Quote.matz,
-    address: ADDRESSES.sample,
-    bedrooms: 1,
-    capacity: 1,
-    category: "Entire home",
-    price: 100
-  )
-  house.save!
->>>>>>> master
 end
 
 s = %w[pending approved rejected]
