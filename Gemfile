@@ -15,6 +15,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
+gem "nokogiri"
 
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 

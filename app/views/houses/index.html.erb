@@ -2,6 +2,7 @@
 <div class="container">
   <div class="all-cards">
     <% @houses.each do |house| %>
+
       <div class="house-card-wrapper">
           <div class="house-card">
           <%= link_to house_path(house) do %>
