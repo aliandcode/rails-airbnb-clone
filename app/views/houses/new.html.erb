@@ -41,39 +41,43 @@
       <div class="login-form-main-message"></div>
       <div class="main-login-form">
         <div class="login-group">
-          <div class="form-group">
+          <div class="form-group spacing">
             <label for="lg_username" class="sr-only">first name</label>
             <%= f.input :title, class:"form-control", placeholder:"title", label:false%>
           </div>
-          <div class="form-group">
+          <div class="form-group spacing">
             <%= f.input :price, class:"form-control", placeholder:"price", label:false%>
           </div>
-          <div class="form-group">
+          <div class="form-group spacing">
             <%= f.input :description, class:"form-control", placeholder:"description", label:false%>
           </div>
-          <div class="form-group">
+          <div class="form-group spacing">
             <%= f.input :address, class:"form-control", placeholder:"address", label:false%>
           </div>
-          <div class="form-group">
-            <%= f.select :bedrooms, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], class:"form-control", placeholder:"bedrooms", label:false %>
+          <div class="form-group spacing">
+            <%= f.input :bedrooms, collection: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] %>
           </div>
-          <div class="form-group">
-            <%= f.select :capacity, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], class:"form-control", placeholder:"capacity", label:false %>
+          <div class="form-group spacing">
+            <%= f.input :capacity, collection: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] %>
           </div>
-          <div class="form-group">
-            <%= f.select :category, ["Entire home", "Private room", "Shared room"], class:"form-control", placeholder:"capacity", label:false %>
+          <div class="form-group spacing">
+            <%= f.input :category, collection: ["Entire home", "Private room", "Shared room"] %>
           </div>
-          <%= f.input :photo, class:"form-control", id:"lg_username", placeholder:"photo" %>
+          <div class="form-group spacing">
+            <%= f.input :photo, class:"form-control", id:"lg_username", placeholder:"photo" %>
+
+          </div>
           <%= f.input :photo_cache, as: :hidden, class: "hidden" %>
-          <div class="form-group login-group-checkbox">
+          <div class="form-group spacing login-group-checkbox">
             <input type="checkbox" id="lg_remember" name="lg_remember">
             <label for="lg_remember">remember</label>
           </div>
         </div>
-        <button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
+        <button type="submit" class="login-button"><i class="fa fa-chevron-right redcol"></i></button>
       </div>
       <div class="etc-login-form">
       </div>
     <% end %>
     <!-- </form> -->
   </div>
+

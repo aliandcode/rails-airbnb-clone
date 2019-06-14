@@ -21,7 +21,7 @@ a:hover {
 }
 /*=== 4. Main Form ===*/
 .login-form-1 {
-  max-width: 300px;
+  max-width: 500px;
   border-radius: 5px;
   display: inline-block;
 }
@@ -49,7 +49,7 @@ a:hover {
 .login-form-1 .form-group {
   margin-bottom: 0;
   border-bottom: 2px solid #efefef;
-  padding-right: 20px;
+  padding-right: 0px;
   position: relative;
 }
 .login-form-1 .form-group:last-child {
@@ -59,7 +59,7 @@ a:hover {
   background: #ffffff;
   color: #999999;
   border-radius: 5px;
-  padding: 10px 25px;
+  padding: 10px 45px;
 }
 .login-group-checkbox {
   padding: 5px 0;
@@ -258,4 +258,19 @@ label:hover:before {
 }
 .hidden {
   border-bottom: 0px !important;
+}
+abbr[title="required"] {
+  display: none;
+}
+.spacing {
+  padding: 10px 0px;
+}
+.spacing {
+  padding: 20px 0px 10px 0px;
+}
+.space-top {
+  padding-top: 10px;
+}
+.redcol {
+  color: $red;
 }
