@@ -1,0 +1,52 @@
+.dashboard-content h1 {
+  text-align: center;
+}
+
+.dashboard-container {
+  width: 1050px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.dashboard .board{
+  margin: 50px;
+}
+
+.dashboard-card {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  width: 550px;
+}
+
+.dashboard-picture {
+  height: 150px;
+  border-radius: 10px;
+  margin-right: 20px;
+  width: 175px;
+  vertical-align: middle;
+}
+
+.card-body {
+  flex: auto;
+}
+.card-header {
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 3px;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+
+.card-header:hover {
+    background: #f7f7fa;
+    border-color: #f7f7fa;
+    cursor: pointer;
+}
+
+.booking-confirmation {
+  border-bottom: 1px solid grey;
+}

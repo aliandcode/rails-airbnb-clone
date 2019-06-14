@@ -20,4 +20,8 @@ Rails.application.routes.draw do
       get 'dashboard'
     end
   end
+
+  patch "bookings/:id/approve", to: "bookings#approve", as: 'booking_approve'
+  patch "bookings/:id/reject", to: "bookings#reject", as: 'booking_reject'
+
 end

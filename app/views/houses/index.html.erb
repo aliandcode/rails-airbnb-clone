@@ -5,16 +5,16 @@
 
       <div class="house-card-wrapper">
           <div class="house-card">
-          <%= link_to house_path(house) do %>
-          <%= cl_image_tag house.photo %>
-          <% end %>
+            <%= link_to house_path(house) do %>
+            <%= cl_image_tag house.photo %>
+            <% end %>
           </div>
           <div class="house-card-infos">
             <div class="house-card-title">
               <h2><%= link_to house.title, house_path(house), class: 'card-link' %></h2>
-              <p>Entire Home | 2 Beds</p>
+              <p><%= house.category %> | <%= house.bedrooms %> Bedrooms</p>
             </div>
-           <h2><%= house.price %></h2>
+            <h2>$<%= house.price %>/night</h2>
           </div>
       </div>
     <% end %>
