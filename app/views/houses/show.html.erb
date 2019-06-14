@@ -1,10 +1,11 @@
 <!-- show.html.erb -->
-<%= cl_image_tag @house.photo, height: 300, width: 1480, crop: :fill %>
+<%= cl_image_tag @house.photo, height: 300, crop: :fill %>
 <div class="house-full-section">
   <div class="house-details">
     <div class="house-title">
       <%= @house.title%>
     </div>
+    <br>
       <%= @house.address %>
         <h2>Description</h2>
       <%= @house.description %>
@@ -25,10 +26,5 @@
         <% end %>
       <% end %>
   </div>
-
-  <% if current_user != @house.user %>
-    <div class="booking_creation_form">
-        <%= render 'shared/form_bookings' %>
-    </div>
-  <% end %>
 </div>
+<%= render 'bookings/modal' %>
