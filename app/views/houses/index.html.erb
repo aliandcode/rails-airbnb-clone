@@ -14,12 +14,28 @@
               <h2><%= link_to house.title, house_path(house), class: 'card-link' %></h2>
               <p><%= house.category %> | <%= house.bedrooms %> Bedrooms</p>
             </div>
-            <h2>$<%= house.price %>/night</h2>
+            <div class="house-card-stars-price">
+              <h2>$<%= house.price %>/night</h2>
+              <% 5.times do %>
+                <%= image_tag 'star.png', style:"width:15px;height:15px;" %>
+              <% end %>
+<!--               still need to finish average stars calculation
+ --><!--               <% @stars_n = 0 %>
+              <% @stars_s = 0 %>
+              <% house.bookings.each do |booking| %>
+                <% @stars_s += booking.review.stars unless booking.review.nil? %>
+                <% @stars_n += 1 unless booking.review.nil? %>
+                <%= booking.review.stars unless booking.review.nil? %>
+              <% end %>
+              <% (@stars_s/@stars_n).times do %>
+                <%= image_tag 'star.png', style:"width:20px;height:20px;" %>
+              <% end %> -->
+            </div>
           </div>
       </div>
     <% end %>
   </div>
   <div
     id="map" style="width: 35%;"data-markers="<%= @markers.to_json %>"data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
+  </div>
 </div>
