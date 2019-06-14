@@ -3,7 +3,6 @@
   <tr>
     <td></td>
     <td class="booking-s-container" bgcolor="#FFFFFF">
-
       <div class="content">
       <table>
         <tr>
@@ -11,32 +10,20 @@
             <br/>
             <h3>Thanks <%= @booking.user.firstname.capitalize %>!</h3>
 
-            <!-- You may like to include a Hero Image -->
             <p><%= image_tag "#{@booking.house.photo}", class: "booking-summary-picture" %></p>
-            <!-- /Hero Image -->
 
             <br/>
 
             <h4>Your booking summary</h4>
             <p class="book-sum">Thank you for booking <b><%= @booking.house.title %></b>. Your booking has been placed successfully, and is pending for host approval.</p>
 
-            <br/>
-
-            <!-- Line Items -->
-            <div class="products">
-
-            </div>
             <hr>
 
-            <!-- /Line Items -->
-
+            <br/>
             <p>From <%= @booking.checkin_date %> to <%= @booking.checkout_date %>
             </p>
             <p>Nigths:
               <%= (@booking.checkout_date - @booking.checkin_date).to_i %>
-            </p>
-            <p>Price:
-
             </p>
             <p>Guests:
               <%= @booking.guests %>
@@ -44,21 +31,10 @@
             <p>
               Status: pending to be approved by host
             </p>
-
-            <!-- Totals -->
-
-            <br/>
-            <br/>
-
+            <hr>
             <h4><b>Total: $<%= (@booking.checkout_date - @booking.checkin_date).to_i * @house.price %></b></h4>
-            <!-- /Totals -->
-
             <br/>
-
-            <!-- address detals -->
-
             <br/>
-
             <p style="text-align:center;">
               <%= link_to 'View you bookings', dashboard_pages_path, class: "booking-btn" %>
             </p>
@@ -68,9 +44,7 @@
         </tr>
       </table>
       </div>
-
     </td>
-    <td></td>
   </tr>
 </table>
 <!-- /BODY -->
@@ -78,23 +52,22 @@
 <!-- FOOTER -->
 <table class="footer-wrap" bgcolor="#EFEFEF">
   <tr>
-    <td></td>
     <td class="booking-s-container">
 
-        <!-- content -->
-        <div class="content">
-        <table>
+      <!-- content -->
+      <div class="content">
+      <table>
         <tr>
           <td align="center">
-            <p>Thank you for bookign at <%= link_to 'AliBnb', houses_path %>
+            <p>Thank you for bookign with <%= link_to 'AliBnb', houses_path %>
             <p><small>© AliBnb</small></p>
           </td>
         </tr>
       </table>
-        </div><!-- /content -->
-
+      </div>
+      <!-- /content -->
     </td>
-    <td></td>
   </tr>
-</table><!-- /FOOTER -->
+</table>
+<!-- /FOOTER -->
 

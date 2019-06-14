@@ -14,6 +14,9 @@ class HousesController < ApplicationController
         lng: house.longitude
       }
     end
+
+    @stars_n = 0
+    @stars_s = 0
   end
 
   def show

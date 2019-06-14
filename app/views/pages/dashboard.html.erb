@@ -1,55 +1,56 @@
 <div class="container justify-content-center spacingt">
   <div class="row">
-<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">bookings</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">listings</a>
-  </li>
-</ul>
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">listings</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">bookings</a>
+      </li>
+    </ul>
+  </div>
 </div>
-</div>
+
 <div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active container" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
     <% if !@houses.empty? %>
-      <div class="tab-pane fade show active container" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-        <div class="dashboard-listings board justify-content-center">
-          <div class="dashboard-cards centertext">
-            <% @houses.each do |house| %>
-              <div class="dashboard-card listing-card ">
-                <div class="dashboard-listings card-header">
-                  <%= image_tag "#{house.photo}", class: "dashboard-picture" %>
-                  <div class="dashboard-listings card-body">
-                    <h4><%= link_to house.title, house_path(house), class: 'card-link' %>
-                    </h4>
-                    <p>At <%= house.address %></p>
-                  </div>
-                </div>
-                <div class="dashboard-listings-card-footer">
-                  <ul>
-                    <% house.bookings.each do |booking| %>
-                      <li class="booking-confirmation">
-                        <p><b><%= booking.user.firstname.capitalize %></b> has booked your place from <%= booking.checkin_date %> to <%= booking.checkout_date %></p>
-                        <% if booking.status == "pending" %>
-                          <p><%= link_to "Approve", booking_approve_path(booking), method: :patch %> or <%= link_to "Reject", booking_reject_path(booking), method: :patch %> the booking</p>
-                          <% else %>
-                          <p>You have <%= booking.status %> the booking.</p>
-                        <% end %>
-                      </li>
-                    <% end %>
-                  </ul>
+      <div class="dashboard-listings board justify-content-center">
+        <div class="dashboard-cards centertext">
+          <% @houses.each do |house| %>
+            <div class="dashboard-card listing-card ">
+              <div class="dashboard-listings card-header">
+                <%= image_tag "#{house.photo}", class: "dashboard-picture" %>
+                <div class="dashboard-listings card-body">
+                  <h4><%= link_to house.title, house_path(house), class: 'card-link' %>
+                  </h4>
+                  <p>At <%= house.address %></p>
                 </div>
               </div>
-            <% end %>
-          </div>
+              <div class="dashboard-listings-card-footer">
+                <ul>
+                  <% house.bookings.each do |booking| %>
+                    <li class="booking-confirmation">
+                      <p><b><%= booking.user.firstname.capitalize %></b> has booked your place from <%= booking.checkin_date %> to <%= booking.checkout_date %></p>
+                      <% if booking.status == "pending" %>
+                        <p><%= link_to "Approve", booking_approve_path(booking), method: :patch %> or <%= link_to "Reject", booking_reject_path(booking), method: :patch %> the booking</p>
+                        <% else %>
+                        <p>You have <%= booking.status %> the booking.</p>
+                      <% end %>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
     <% end %>
+  </div>
 
+  <div class="tab-pane fade container" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
     <% if !@bookings.empty? %>
-      <div class="tab-pane fade container" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-        <div class="dashboard-bookings board justify-content-center">
-          <div class="dashboard-cards centertext">
+      <div class="dashboard-bookings board justify-content-center">
+        <div class="dashboard-cards centertext">
           <% @bookings.each do |booking| %>
             <div class="dashboard-card booking-card">
               <div class="dashboard-booking card-header">
@@ -63,10 +64,11 @@
               </div>
             </div>
           <% end %>
-          </div>
         </div>
       </div>
     <% end %>
+  </div>
+
 </div>
 
 
